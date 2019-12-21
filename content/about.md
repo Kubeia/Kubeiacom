@@ -1,6 +1,21 @@
 ---
-date: "2016-05-05T21:48:51-07:00"
+date: "2019-12-18"
 title: About
 ---
 
-This is a "hello world" example website for the [**blogdown**](https://github.com/rstudio/blogdown) package. The theme was forked from [@jrutheiser/hugo-lithium-theme](https://github.com/jrutheiser/hugo-lithium-theme) and modified by [Yihui Xie](https://github.com/yihui/hugo-lithium).
+Welcome to my website. This is where I publish things that I have found interesting. I have a background in statistics, but my interests include the mathematics of gambling, sport, finance, data science. In my real job I manage a team of data scientists. My main tools are R, Python, and yes, Excel.
+
+## About this website
+
+
+
+## About the author
+
+
+
+## About the name Kubeia
+
+
+Thanks for dropping by
+
+Sam.

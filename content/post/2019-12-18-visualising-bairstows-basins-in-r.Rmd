@@ -1,0 +1,13 @@
+---
+title: Visualising Bairstows Basins in R
+author: Sam Glasson
+date: '2019-12-18'
+slug: visualising-bairstows-basins-in-r
+categories:
+  - R
+tags: [Bairstow's Method]
+---
+
+## Creating fractals
+
+## Bairstows Method
