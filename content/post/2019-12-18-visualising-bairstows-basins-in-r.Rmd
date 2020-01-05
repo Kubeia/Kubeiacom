@@ -4,10 +4,20 @@ author: Sam Glasson
 date: '2019-12-18'
 slug: visualising-bairstows-basins-in-r
 categories:
-  - R
+  - R, ggplot2
 tags: [Bairstow's Method]
 ---
 
+Back in the early 90's I spent many a day sitting at an IBM PC clone playing with a program called fractint which you could visualise Mandelbrot's fractals, Julia sets Newton's method and the like in beautiful VGA colour. My father, who was a mathemtician, coded up in Quickbasic visualisations for Bairstow's method which is a root finding algorithm much like Newton's method. These programs would often take a whole day to run. We would then print out the pretty pictures using a new colour inkjet printer. The code and charts that follow are my R version of Bairstow's method that I whipped up on a day off from work. The programming is pretty naive and I am sure that there are some easy speed gains. I am also using this as a chance to make my first technical blog post for my new blog. My stack includes RStudio, blogdown, Rmarkdown, LaTeX.
+
 ## Creating fractals
+As I mentioned earlier, Bairstow's method is a root finding method, and is related to Newton's method. These type of root finding algorithms are iterative and successively (hopefully) get closer to your solution as the iterations progress. However, there are often more than one solution. And depending on the starting point for your algorithm you may end up at a different solution. By plotting which solution we get from each starting point (using a different colour for each solution) we often get quite beautiful pictures.
+
 
 ## Bairstows Method
+So let's begin with a little maths, which I will keep to a minimum as ulitmately this post is about creating fractals in R rather than the fine mathematical details of the method.
+
+
+##
+
+
