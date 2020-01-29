@@ -11,13 +11,68 @@ tags: [Bairstow's Method]
 Back in the early 90's I spent many a day sitting at an IBM PC clone playing with a program called fractint which you could visualise Mandelbrot's fractals, Julia sets Newton's method and the like in beautiful VGA colour. My father, who was a mathemtician, coded up in Quickbasic visualisations for Bairstow's method which is a root finding algorithm much like Newton's method. These programs would often take a whole day to run. We would then print out the pretty pictures using a new colour inkjet printer. The code and charts that follow are my R version of Bairstow's method that I whipped up on a day off from work. The programming is pretty naive and I am sure that there are some easy speed gains. I am also using this as a chance to make my first technical blog post for my new blog. My stack includes RStudio, blogdown, Rmarkdown, LaTeX.
 
 ## Creating fractals
-As I mentioned earlier, Bairstow's method is a root finding method, and is related to Newton's method. These type of root finding algorithms are iterative and successively (hopefully) get closer to your solution as the iterations progress. However, there are often more than one solution. And depending on the starting point for your algorithm you may end up at a different solution. By plotting which solution we get from each starting point (using a different colour for each solution) we often get quite beautiful pictures.
+As I mentioned earlier, Bairstow's method is a root finding method, and is related to [Newton's method](https://en.wikipedia.org/wiki/Newton%27s_method). These type of root finding algorithms are iterative and successively (hopefully) get closer to your solution as the iterations progress. However, there are often more than one solution. And depending on the starting point for your algorithm you may end up at a different solution. By plotting which solution we get from each starting point (using a different colour for each solution) we often get quite beautiful pictures due to the fractal nature of the optimisation.
 
 
 ## Bairstows Method
 So let's begin with a little maths, which I will keep to a minimum as ulitmately this post is about creating fractals in R rather than the fine mathematical details of the method.
 
+https://en.wikipedia.org/wiki/Bairstow%27s_method
 
-##
+
+## Coding Bairstow's Method
+
+Disclaimer: What you will see next is not very efficient R programming. The main aim was to get this working quickly. Likely you could speed this code up by orders of magnitude with more efficient coding, removing loops, multithreading, and better management of memory.
+
+The function bairstow below has five parameters
+
+```{r}
+bairstow <- function(a, u, v, eps=0.0000001, itermax=1000){
+  n <- length(a)
+  un = u
+  vn = v
+  b <- rep(0, n)
+  f <- rep(0,n)
+  iter <- 0
+  err <- 100
+  
+  while(iter <= itermax && err > eps){
+    b[n] <- b[n-1] <- 0
+    for(i in (n-2):1){
+      b[i] <- a[i+2] - u*b[i+1] - v*b[i+2]
+    }
+    #b
+    
+    f[n] <- f[n-1] <- 0
+    for(i in (n-2):1){
+      f[i] <- b[i+2] - u*f[i+1] - v*f[i+2]
+    }
+    #f
+    
+    c <- a[2] - u*b[1] - v*b[2]
+    d <- a[1] -v*b[1]
+    g <- b[2] - u*f[1] - v*f[2]
+    h <- b[1]-v*f[1]
+    
+    
+    
+    un <- u - 1/(v*g^2 + h*(h-u*g)) *(-h*c + g*d)
+    vn <- v - 1/(v*g^2 + h*(h-u*g)) *(-g*v*c +(g*u-h)*d)
+    
+    err <- abs(u-un) + abs(v-vn)
+    
+    u<-un
+    v<-vn
+    
+    iter <- iter+1
+    if(iter > itermax){
+      u<-NA
+      v<-NA
+    }
+    
+  }
+  return(c(u,v,iter))
+}
+```
 
 

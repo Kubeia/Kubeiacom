@@ -1,5 +1,5 @@
 ---
-title: Quickly creating a website with Blogdown GitHub, Netlify and RStudio
+title: Quickly creating a website with Blogdown, GitHub, Netlify and RStudio
 author: Sam
 date: '2019-12-22'
 slug: quickly-creating-a-website-with-blogdown-github-netlify-and-rstudio
@@ -16,6 +16,7 @@ As I sit here a couple of days before Christmas I have set myself a goal of publ
 ## Why I am doing this
 - Writing and publishing information is a wonderful way to collect my thoughts
 - Done is better than perfect
+- A good summary of [why to create a blog by mathrachel] (https://medium.com/@racheltho/why-you-yes-you-should-blog-7d2544ac1045)
 
 ## The Stack
 The idea is to get the website up and running as easily as possible. I already own the domain kubeia.com so that part is already done.
@@ -39,10 +40,16 @@ Ok, so first I want to create a minimum viable product. Let's see, what do I nee
 
 Because this is an MVP I am skipping a few steps such as spending time with Hugo Themes. I have found in the past that this is a rabbit hole that I can waste so much time. The website is designed to publish my writing and code. The base theme used in blogdown is perfectly serviceable for this. Future iterations of the website may use the Academic theme which produces very clean and extensible websites
 
+## Another option
+
+Jermey Howard has shared a way of building websites using GitHub pages. This is even simpler than the method I have used.
+
 ## Resources
+
+Blogdown
 
 ## Now for some posts
 
-I have some code that I worked on a few month's ago on Bairstow's Method which will make a good post. It will allow me to practice blogdown, and inserting R code and LaTeX into my posts.
+I have some code that I worked on a few month's ago on Bairstow's Method which will make a good post. View the source here. It will allow me to practice blogdown, and inserting R code and LaTeX into my posts. The post is now live here
 
 ## Blogdown workflow
